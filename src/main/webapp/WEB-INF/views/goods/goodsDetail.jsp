@@ -12,6 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+
 <title>상품 상세 정보</title>
 
 <c:if test='${not empty message }'>
@@ -181,7 +182,7 @@ ul.tabs li.current {
 	font-size: 16px;
 	border: 5px solid;
 	border-radius: 10px;
-	background-color: #ffd3dd;
+	background-color: #6DB800;
 	color: white;
 }
 
@@ -217,7 +218,7 @@ div .InfoTop {
 }
 
 .button {
-	background-color: #ffd3dd;
+	background-color: ##6DB800;
 	border: none;
 	border-radius: 4px;
 	padding: 15px 30px;
@@ -283,10 +284,6 @@ tr.border-bottom td {
 	margin: 10px 0 0 5px;
 }
 
-.checked {
-	color: orange;
-}
-
 li#slider1-1 {
 	text-align: left;
 	font-size: x-large;
@@ -301,13 +298,14 @@ ul#slider1 {
 }
 
 .checked {
-	color: #ffc0cb;
+	color: #2F8624;
 	font-size: 60px;
 }
 
 #box11 span.fa.fa-star.checked {
-	float: right;
-	font-size: 20px;
+    float: right;
+    font-size: 20px;
+    color: #6DB800;
 }
 
 #box11 span.fa.fa-star {
@@ -318,7 +316,7 @@ ul#slider1 {
 .InfoTop span.fa.fa-star.checked {
 	float: left;
 	font-size: 40px;
-	color: #ffc0cb;
+	color: #2F8624;
 }
 
 .InfoTop span.fa.fa-star {
@@ -326,7 +324,7 @@ ul#slider1 {
 	font-size: 40px;
 	color: white;
 	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: #ffc0cb;
+	-webkit-text-stroke-color: #2F8624;
 }
 
 img#titleimg {
@@ -340,7 +338,7 @@ h6.titleText {
 .write a {
 	float: right;
 	text-align: center;
-	background-color: #ffc0cb;
+	background-color: #6DB800;
 	font-size: 14px;
 	border: 1px;
 	color: white;
@@ -407,7 +405,7 @@ div #icon {
 	border: 0px;
 	height: 30px;
 	width: 50px;
-	background: #ffc0cf;
+	background: #6DB800;
 	margin: 5px;
 }
 

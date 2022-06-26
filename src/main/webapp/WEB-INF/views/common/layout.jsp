@@ -107,7 +107,6 @@ input {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #ffc0cf;
 }
 
 #nav .cate1 {
@@ -124,10 +123,6 @@ input {
 	padding: 14px 16px;
 	text-decoration: none;
 	overflow: hidden;
-}
-
-#nav li a:hover, .dropdown:hover .dropbtn {
-	background-color: red;
 }
 
 #nav li.dropdown {
@@ -153,7 +148,7 @@ input {
 }
 
 #nav .dropdown-content a:hover {
-	background-color: red;
+	color: #2F8624;
 }
 
 #nav .dropdown:hover .dropdown-content {
