@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.order">
+
+	<resultMap id="orderResult" type="orderVO">
+		<result property="o_id" column="o_id" />
+		<result property="u_name" column="u_name" />
+		<result property="g_name" column="g_name" />
+		<result property="ig_id" column="ig_id" />
+		<result property="o_goods_qty" column="o_goods_qty" />
+		<result property="o_goods_price" column="o_goods_price" />
+		<result property="receiver_name" column="receiver_name" />
+		<result property="receiver_hp" column="receiver_hp" />
+		<result property="receiver_addr1" column="receiver_addr1" />
+		<result property="receiver_addr2" column="receiver_addr2" />
+		<result property="receiver_addr3" column="receiver_addr3" />
+		<result property="deliver_method" column="deliver_method" />
+		<result property="deliver_message" column="deliver_message" />
+		<result property="delivery_state" column="delivery_state" />
+		<result property="pay_method" column="pay_method" />
+		<result property="card_com_name" column="card_com_name" />
+		<result property="card_pay_month" column="card_pay_month" />
+		<result property="good_cancel" column="good_cancel" />
+		<result property="pay_order_time" column="pay_order_time" />
+		<result property="g_id" column="g_id" />
+		<result property="u_id" column="u_id" />
+		<result property="s_id" column="s_id" />
+		<result property="o_useMile" column="o_useMile" />
+		<result property="b_gr_id" column="b_gr_id" />
+		<result property="parentNo" column="parentNo" />
+		<result property="count" column="count"/>
+		<result property="o_goods_saleprice" column="o_goods_saleprice"/>
+		<result property="d_price" column="d_price"/>
+	</resultMap>
+
+
+	<insert id="insertOrder" parameterType="orderVO">
+		<selectKey resultType="int" keyProperty="parentNo"
+			order="BEFORE">
+			SELECT 
+    CASE
+        WHEN max(parentNo) IS NULL THEN 1
+        ELSE Max(parentNo) + 1
+        END as parentNo
+	from order_tb
+		</selectKey>
+	    <![CDATA[
+		            insert into order_tb (u_id,
+		            g_id,
+		            s_id,
+		            o_goods_price,
+		            o_goods_qty,
+		            u_name, 
+		            g_name,
+		            receiver_hp,
+		            receiver_addr1,
+		            receiver_addr2,
+		            receiver_addr3,
+		            receiver_name,
+		            pay_method,
+		            card_pay_month,
+		            deliver_method,
+		            deliver_message,
+		            o_useMile,
+		            parentNo,
+		            o_goods_saleprice,
+		            d_price) values
+		            (#{u_id},
+		            #{g_id},
+		            #{s_id},
+		            #{o_goods_price},
+		            #{o_goods_qty},
+		            #{u_name},
+		            #{g_name},
+		            #{receiver_hp},
+		            #{receiver_addr1},
+		            #{receiver_addr2},
+		            #{receiver_addr3},
+		            #{receiver_name},
+		            #{pay_method},
+		            #{card_pay_month},
+		            #{deliver_method},
+		            #{deliver_message},
+		            #{o_useMile},
+		            #{parentNo},
+		            #{o_goods_saleprice},
+		            #{d_price})
+		]]>
+	</insert>
+
+	<select id="selectUserOrders" parameterType="String"
+		resultMap="orderResult">
+	<![CDATA[
+		   select * from order_tb where u_id=#{u_id} and good_cancel = 'N' order by pay_order_time desc
+		]]>
+	</select>
+
+	<select id="UserboardOrderPage" parameterType="String"
+		resultMap="orderResult">
+   <![CDATA[
+	    select R1.* from (select * from order_tb) R1 where u_id = #{u_id} and good_cancel = 'N' order by pay_order_time desc limit #{start} , #{end} 
+	   ]]>
+	</select>
+
+	<select id="CanceledUserOrders" parameterType="String"
+		resultMap="orderResult">
+	<![CDATA[
+		   select * from order_tb where u_id=#{u_id} and good_cancel = 'Y' order by pay_order_time desc
+		]]>
+	</select>
+
+	<select id="CanceledUserOrderPage" parameterType="String" resultMap="orderResult">
+   <![CDATA[
+	    select R1.* from (select * from order_tb) R1 where u_id = #{u_id} and good_cancel = 'Y' order by pay_order_time desc limit #{start} , #{end} 
+	   ]]>
+	</select>
+
+	<select id="UserboardOrderListPage" parameterType="Map" resultMap="orderResult">
+   <![CDATA[
+	    select R1.* from (select o.*, gr.b_gr_id from order_tb o left outer join board_gr gr on o.o_id = gr.o_id) R1 where u_id = #{u_id} and delivery_state = #{delivery_state} and good_cancel = 'N' order by pay_order_time desc limit #{start} , #{end} 
+	   ]]>
+	</select>
+
+	<select id="selectOrder"  parameterType="Integer" resultType="orderVO">
+   <![CDATA[
+	    select * from order_tb where o_id = #{o_id}
+	   ]]>
+	</select>
+	
+	<update id="deleteOrder" parameterType="Integer">
+	<![CDATA[
+	update order_tb set good_cancel = 'Y', pay_order_time = CURRENT_TIMESTAMP where o_id=#{o_id}
+	]]>
+	</update>
+
+	<select id="overlappedO_id" parameterType="Integer" resultType="String">
+   <![CDATA[
+	   select if(count(*), 'true', 'false')
+	   from board_gr where o_id = #{o_id}
+	   ]]>
+	</select>
+
+	<select id="OrderResult"  parameterType="String" resultMap="orderResult">
+   <![CDATA[
+	   select * from order_tb where parentNo = #{parentNo}
+	   ]]>
+	</select>
+
+
+	<select id="MaxParentNo" parameterType="String" resultType="String">
+   <![CDATA[
+	   select max(parentNo) from order_tb where u_id = #{u_id}
+	   ]]>
+	</select>
+
+	<!-- 판매자가 주문리스트를 받기위해 사용 0614 -->
+	<select id="orderSellerList"  parameterType="Map" resultMap="orderResult">
+   <![CDATA[
+	   select R1.* from (select * from order_tb) R1 where s_id = #{s_id} and good_cancel ='N' order by o_id desc limit #{start} , #{end} 
+	   ]]>
+	</select>
+	
+	<select id="orderCanceledSellerList"  parameterType="Map" resultMap="orderResult">
+   <![CDATA[
+	   select R1.* from (select * from order_tb) R1 where s_id = #{s_id} and good_cancel ='Y' order by o_id desc limit #{start} , #{end} 
+	   ]]>
+	</select>
+	
+	<!-- 판매자가 배송상태 변경을 위해 사용 0614 -->
+	<update id="delivUpdate" parameterType="java.util.Map">
+		update order_tb
+			set
+				<if test="delivery_state != '' and delivery_state != null">
+					delivery_state = #{delivery_state}
+				</if>
+		where o_id = #{o_id}
+	</update>
+
+			<insert id="insertCartOrder" parameterType="orderVO" >
+
+	    <![CDATA[
+		            insert into order_tb (u_id,
+		            g_id,
+		            s_id,
+		            o_goods_price,
+		            o_goods_qty,
+		            u_name, 
+		            g_name,
+		            receiver_hp,
+		            receiver_addr1,
+		            receiver_addr2,
+		            receiver_addr3,
+		            receiver_name,
+		            pay_method,
+		            card_pay_month,
+		            deliver_method,
+		            deliver_message,
+		            o_useMile,
+		            parentNo,o_goods_saleprice,d_price) values
+		            (#{u_id},
+		            #{g_id},
+		            #{s_id},
+		            #{o_goods_price},
+		            #{o_goods_qty},
+		            #{u_name},
+		            #{g_name},
+		            #{receiver_hp},
+		            #{receiver_addr1},
+		            #{receiver_addr2},
+		            #{receiver_addr3},
+		            #{receiver_name},
+		            #{pay_method},
+		            #{card_pay_month},
+		            #{deliver_method},
+		            #{deliver_message},
+		            #{o_useMile},
+		            #{parentNo},
+		            #{o_goods_saleprice},
+		            #{d_price})
+		]]>
+	</insert>
+	
+	<select id="MaxOrderNum" resultType="int">
+	<![CDATA[
+		select max(parentNO)+1 from order_tb 
+	 ]]>	
+	</select>
+	
+	<select id="BestGoodsCount" resultMap="orderResult">
+	<![CDATA[
+	   select g_id, count(g_id) as count from order_tb group by g_id order by count desc limit 0,4
+	]]>
+	
+	</select>
+	
+	<!-- 관리자의  등록상품 조회 0620 -->
+	<select id="AllOList" parameterType="Map" resultMap="orderResult">
+	<![CDATA[
+		   select R1.* from (select * from order_tb) R1 order by o_id desc limit #{start} , #{end} 
+	   		]]>
+	</select>
+</mapper>
