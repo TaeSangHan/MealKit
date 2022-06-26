@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+
+<!-- 1대1 보드테이블 -->
+	<definition name="/board1/selectMyBoard1" extends="baseLayout2">
+		<put-attribute name="title" value="1대1게시판 메인" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/board_1/1on1search.jsp" />
+	</definition>
+	
+	<definition name="/board1/selectBoard1List" extends="baseLayout2">
+		<put-attribute name="title" value="1대1게시판 메인" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/board_1/1on1search.jsp" />
+	</definition>
+	
+  <definition name="/board1/b1Detail" extends="baseLayout2">
+      <put-attribute name="title" value="보드디테일" />
+      <put-attribute name="body" value="/WEB-INF/views/board_1/b1Detail.jsp" />
+   </definition>
+
+ <definition name="/board1/board1Write" extends="baseLayout2">
+      <put-attribute name="title" value="1대1게시판 작성" />
+      <put-attribute name="body" value="/WEB-INF/views/board_1/1on1write.jsp" />
+   </definition>
+   
+   <definition name="board1/board1Updateform" extends="baseLayout2">
+      <put-attribute name="title" value="1대1게시판 수정" />
+      <put-attribute name="body" value="/WEB-INF/views/board_1/1on1update.jsp" />
+   </definition>
+   
+      <definition name="board1/board1Reviewform" extends="baseLayout2">
+      <put-attribute name="title" value="1대1게시판 답글" />
+      <put-attribute name="body" value="/WEB-INF/views/board_1/1on1Review.jsp" />
+   </definition>
+   
+   <!-- 리뷰 보드테이블 -->
+   
+	<definition name="/boardGr/selectBoardGrList" extends="baseLayout2">
+		<put-attribute name="title" value="리뷰게시판 메인" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gr/gr_search.jsp" />
+	</definition>
+	
+	<definition name="/boardGr/gr_detail" extends="baseLayout2">
+		<put-attribute name="title" value="리뷰보드디테일" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gr/gr_detail.jsp" />
+	</definition>
+	
+	<definition name="/boardGr/boardGrWrite" extends="baseLayout2">
+		<put-attribute name="title" value="리뷰게시판 작성" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gr/gr_insert.jsp" />
+	</definition>
+	
+	<definition name="boardGr/boardGrUpdateform" extends="baseLayout2">
+		<put-attribute name="title" value="리뷰게시판 수정" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gr/gr_update.jsp" />
+	</definition>
+	
+	<definition name="boardGr/boardGrReviewform" extends="baseLayout2">
+	<put-attribute name="title" value="리뷰게시판 답글" />
+	<put-attribute name="body" value="/WEB-INF/views/board_gr/gr_review.jsp" />
+	</definition>
+	
+	<definition name="/boardGr/selectMyBoardGrList" extends="baseLayout2">
+		<put-attribute name="title" value="내 리뷰 보기" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gr/gr_my_search.jsp" />
+	</definition>
+	
+	<definition name="/boardGr/selectSellerBoardGrList" extends="baseLayout2">
+		<put-attribute name="title" value="내 상품 리뷰 보기" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gr/gr_my_search.jsp" />
+	</definition>
+	
+	<definition name="boardGr/boardGrReviewUpdateform" extends="baseLayout2">
+		<put-attribute name="title" value="리뷰 답글 수정" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gr/gr_review_update.jsp" />
+	</definition>
+	
+	<definition name="/boardGr/selectGoodsBoardGrList" extends="baseLayout2">
+		<put-attribute name="title" value="상품 상세" />
+		<put-attribute name="body" value="/WEB-INF/views/goods/goodsDetail.jsp" />
+	</definition>
+	
+	
+	
+	<!-- 상품문의 보드테이블 -->
+	
+	<definition name="/boardGq/selectBoardGqList" extends="baseLayout2">
+		<put-attribute name="title" value="상품문의 게시판 메인" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gq/gq_search.jsp" />
+	</definition>
+	
+	<definition name="/boardGq/gq_detail" extends="baseLayout2">
+		<put-attribute name="title" value="상품문의 보드디테일" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gq/gq_detail.jsp" />
+	</definition>
+	
+	<definition name="/boardGq/boardGqWrite" extends="baseLayout2">
+		<put-attribute name="title" value="상품문의 게시판 작성" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gq/gq_insert.jsp" />
+	</definition>
+	
+	<definition name="boardGq/boardGqUpdateform" extends="baseLayout2">
+		<put-attribute name="title" value="상품문의게시판 수정" />
+		<put-attribute name="body" value="/WEB-INF/views/board_gq/gq_update.jsp" />
+	</definition>
+	
+	<definition name="/boardGq/boardGqReviewform" extends="baseLayout2">
+	<put-attribute name="title" value="상품문의게시판 답글" />
+	<put-attribute name="body" value="/WEB-INF/views/board_gq/gq_review.jsp" />
+	</definition>
+	
+		<definition name="/boardGq/selectMyBoardGqList" extends="baseLayout2">
+	<put-attribute name="title" value="내 상품문의 보기" />
+	<put-attribute name="body" value="/WEB-INF/views/board_gq/gq_my_search.jsp" />
+	</definition>
+	
+		<definition name="/boardGq/selectSellerBoardGqList" extends="baseLayout2">
+	<put-attribute name="title" value="내 상품문의 보기" />
+	<put-attribute name="body" value="/WEB-INF/views/board_gq/gq_my_search.jsp" />
+	</definition>
+	
+		<definition name="boardGq/boardGqReviewUpdateform" extends="baseLayout2">
+	<put-attribute name="title" value="상품문의 답글 수정" />
+	<put-attribute name="body" value="/WEB-INF/views/board_gq/gq_review_update.jsp" />
+	</definition>
+	
+	<!-- 관리자게시판 테이블 -->
+	<definition name="/boardA/boardAWrite" extends="baseLayout2">
+		<put-attribute name="title" value="어드민 게시판 작성" />
+		<put-attribute name="body" value="/WEB-INF/views/board_a/baInsert.jsp" />
+	</definition>
+	
+	<definition name="/boardA/boardAList" extends="baseLayout2">
+		<put-attribute name="title" value="어드민 게시판 목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/board_a/boardAList.jsp"/>
+	</definition>
+	
+	<definition name="/boardA/boardADetail" extends="baseLayout">
+		<put-attribute name="title" value="어드민 게시판 목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/board_a/baDetail.jsp"/>
+	</definition>
+	
+	<definition name="/boardA/boardASPList1" extends="baseLayout2">
+		<put-attribute name="title" value="공지사항"/>
+		<put-attribute name="body" value="/WEB-INF/views/board_a/noticeList.jsp"/>
+	</definition>
+	
+	<definition name="/boardA/boardASPList2" extends="baseLayout2">
+		<put-attribute name="title" value="이벤트"/>
+		<put-attribute name="body" value="/WEB-INF/views/board_a/eventList.jsp"/>
+	</definition>
+	
+	<definition name="/boardA/boardASPList3" extends="baseLayout2">
+		<put-attribute name="title" value="자주묻는질문"/>
+		<put-attribute name="body" value="/WEB-INF/views/board_a/QuestionA.jsp"/>
+	</definition>
+	
+	<definition name="/boardA/UpdateBAform" extends="baseLayout2">
+		<put-attribute name="title" value="자주묻는질문"/>
+		<put-attribute name="body" value="/WEB-INF/views/board_a/baUpdate.jsp"/>
+	</definition>
+	
+	
+</tiles-definitions>

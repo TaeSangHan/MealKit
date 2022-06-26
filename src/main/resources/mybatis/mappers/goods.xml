@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.goods">
+
+	<resultMap id="goodsResult" type="goodsVO">
+		<result property="g_id" column="g_id" />
+		<result property="g_cate1" column="g_cate1" />
+		<result property="g_cate2" column="g_cate2" />
+		<result property="g_cate3" column="g_cate3" />
+		<result property="g_origin" column="g_origin" />
+
+		<result property="g_amount" column="g_amount" />
+		<result property="g_price" column="g_price" />
+		<result property="g_saleprice" column="g_saleprice" />
+		<result property="g_saleDate1" column="g_saleDate1" />
+		<result property="g_saleDate2" column="g_saleDate2" />
+		<result property="g_eatDate" column="g_eatDate" />
+		<result property="g_detail1" column="g_detail1" />
+
+		<result property="g_allergy_M" column="g_allergy_M" />
+		<result property="g_allergy_D" column="g_allergy_D" />
+		<result property="g_state" column="g_state" />
+		<result property="g_creDate" column="g_creDate" />
+		<result property="s_id" column="s_id" />
+		<result property="g_time" column="g_time" />
+		<result property="g_nan" column="g_nan" />
+		<result property="g_inbun" column="g_inbun" />
+		<result property="g_bang" column="g_bang" />
+		<result property="g_saleWon" column="g_saleWon" />
+		<result property="g_salePer" column="g_salePer" />
+	</resultMap>
+
+	<resultMap id="img_GResult" type="Img_gVO">
+		<result property="fileName" column="fileName" />
+		<result property="g_id" column="g_id" />
+		<result property="cate" column="cate" />
+		<result property="ig_id" column="ig_id" />
+	</resultMap>
+
+	<insert id="insertNewGoods" parameterType="Map">
+
+		insert into goods_tb(
+		s_id
+		,g_name
+		,g_cate2
+		,g_cate3
+		,g_amount
+		,g_price
+		,g_detail1
+		<if test="g_allergy_M != null and !(g_allergy_M.equals(''))">
+		,g_allergy_M
+		</if>
+		<if test="g_allergy_D != null and !(g_allergy_D.equals(''))">
+		,g_allergy_D
+		</if>
+		,g_time
+		,g_nan
+		,g_inbun
+		,g_bang
+		<if test="g_saleDate1 != null and !(g_saleDate1.equals(''))">
+		,g_saleDate1
+		</if>
+		<if test="g_saleDate2 != null and !(g_saleDate2.equals(''))">
+		,g_saleDate2
+		</if>
+		<if test="g_saleWon != null and !(g_saleWon.equals(''))">
+		,g_saleWon
+		</if>
+
+		<if test="g_salePer != null and !(g_salePer.equals(''))">
+		,g_salePer
+		</if>
+		) values(
+		#{s_id},
+		#{g_name},
+		#{g_cate2},
+		#{g_cate3},
+		#{g_amount},
+		#{g_price},
+		#{g_detail1}
+		<if test="g_allergy_M != null and !(g_allergy_M.equals(''))">
+			,#{g_allergy_M}
+		</if>
+		<if test="g_allergy_D != null and !(g_allergy_D.equals(''))">
+			,#{g_allergy_D}
+		</if>
+		,#{g_time}
+		,#{g_nan}
+		,#{g_inbun}
+		,#{g_bang}
+		<if test="g_saleDate1 != null and !(g_saleDate1.equals(''))">
+			,#{g_saleDate1}
+		</if>
+		<if test="g_saleDate2 != null and !(g_saleDate2.equals(''))">
+			,#{g_saleDate2}
+		</if>
+		<if test="g_saleWon != null and !(g_saleWon.equals(''))">
+			,#{g_saleWon}
+		</if>
+
+		<if test="g_salePer != null and !(g_salePer.equals(''))">
+			,#{g_salePer}
+		</if>
+		)
+
+	</insert>
+
+
+	<insert id="img_gInsert" parameterType="Img_gVO">
+
+	    <![CDATA[
+		   insert into img_g (fileName,cate,g_id)	values( #{fileName}, #{cate},#{g_id})
+		]]>
+	</insert>
+
+	<select id="selectGoods" parameterType="String"
+		resultType="GoodsVO">
+	<![CDATA[
+		   select * from goods_tb where g_cate1=#{cate1} and s_id IS NOT NULL order by g_creDate desc
+		]]>
+	</select>
+
+
+	<select id="findg_id" parameterType="String"
+		resultType="GoodsVO">
+	<![CDATA[
+		   select * from goods_tb
+		   where g_name = #{g_name}
+		]]>
+	</select>
+
+	<select id="selectOverlappedG_NAME" parameterType="String"
+		resultType="String">
+		select if(count(*), 'true', 'false')
+		from goods_tb
+		where
+		g_name = #{g_name}
+	</select>
+
+	<!--상품상세를 위한 출력 -->
+	<select id="selectGoodsImg" parameterType="int"
+		resultMap="img_GResult">
+		select * from img_g where g_id = #{g_id}
+	</select>
+	
+	<!--굿즈디테일만을 위한 이미지 출력 -->
+	<select id="selectGoodsImg1" parameterType="int"
+		resultType="img_gVO">
+		select * from img_g where ig_id = #{ig_id}
+	</select>
+
+	<select id="selectOneImg" parameterType="Map"
+		resultType="img_gVO">
+ <![CDATA[
+ select * from img_g where g_id =#{g_id} and cate = #{cate} 
+ ]]>
+	</select>
+
+
+	<select id="selectGoodsDetail" parameterType="int"
+		resultType="GoodsVO">
+
+		select * from goods_tb where g_id =#{g_id}
+	</select>
+
+
+
+	<!-- 상품수정창 -->
+	<update id="updateGoods" parameterType="Map">
+
+		update goods_tb set
+		<if test="g_name != null and !(g_name.equals(''))">
+			g_name = #{g_name},
+		</if>
+
+		<if test="g_cate2 != null and !(g_cate2.equals(''))">
+			g_cate2 = #{g_cate2},
+		</if>
+
+		<if test="g_amount != null and !(g_amount.equals(''))">
+			g_amount = #{g_amount},
+		</if>
+
+		<if test="g_price != null and !(g_price.equals(''))">
+			g_price = #{g_price},
+		</if>
+
+		<if test="g_detail1 != null and !(g_detail1.equals(''))">
+			g_detail1 = #{g_detail1},
+		</if>
+
+		<if test="g_allergy_M != null and !(g_allergy_M.equals(''))">
+			g_allergy_M = #{g_allergy_M},
+		</if>
+
+		<if test="g_allergy_D != null and !(g_allergy_D.equals(''))">
+			g_allergy_D = #{g_allergy_D},
+		</if>
+
+		<if test="g_nan != null and !(g_nan.equals(''))">
+			g_nan = #{g_nan},
+		</if>
+
+		<if test="g_inbun != null and !(g_inbun.equals(''))">
+			g_inbun = #{g_inbun},
+		</if>
+
+		<if test="g_bang != null and !(g_bang.equals(''))">
+			g_bang = #{g_bang},
+		</if>
+		<if test="g_saleDate3 != null and !(g_saleDate3.equals(''))">
+			g_saleDate1 = #{g_saleDate3},
+		</if>
+		<if test="g_saleDate4 != null and !(g_saleDate4.equals(''))">
+			g_saleDate2 = #{g_saleDate4},
+		</if>
+		<if test="g_saleWon != null and !(g_saleWon.equals(''))">
+			g_saleWon = #{g_saleWon},
+		</if>
+
+		<if test="g_salePer != null and !(g_salePer.equals(''))">
+			g_salePer = #{g_salePer}
+		</if>
+
+		where g_id =#{g_id}
+
+	</update>
+
+	<select id="goodsG_Info" parameterType="int"
+		resultType="GoodsVO">
+	<![CDATA[
+		   select * from goods_tb
+		   where g_id = #{g_id}
+		]]>
+	</select>
+
+	<select id="updateGoodsImg" parameterType="Map">
+		<![CDATA[
+			update img_g set fileName = #{fileName} where g_id=#{g_id} and cate=#{cate}
+		]]>
+	</select>
+
+	<delete id="deleteGoods" parameterType="GoodsVO">
+		<![CDATA[
+			delete from goods_tb where g_id = #{g_id}
+		]]>
+	</delete>
+
+
+	<!-- 상품관리창 -->
+	<select id="goodsPage" resultMap="goodsResult"
+		parameterType="Map">
+   <![CDATA[
+	   select R1.* from (select * from goods_tb order by g_id) R1 where s_id = #{s_id} order by g_id DESC limit #{start} , #{end} 
+	   ]]>
+	</select>
+
+	<!-- ===============goodsSearch ===========================  -->
+	<select id="SearchGoods" parameterType="Map"
+		resultMap="goodsResult">
+		select * from goods_tb where g_name like
+		CONCAT('%',#{text},'%') and s_id IS NOT NULL
+		<if test="g_allergy_M != null and g_allergy_M != ''">
+		<foreach collection="allergyList" item ="allergyList" separator=" ">
+		and g_allergy_M not like concat('%',#{allergyList},'%')
+		</foreach>
+		</if>
+		limit #{start} , #{end}
+	</select>
+	
+
+	<select id="CateSearchGoods" parameterType="Map"
+		resultMap="goodsResult">
+		select * from goods_tb where g_name like CONCAT('%',#{text},'%') and g_cate2 = #{cate} and s_id IS NOT NULL
+	
+		<if test="g_allergy_M != null and g_allergy_M != ''">
+		<foreach collection="allergyList" item ="allergyList" separator=" ">
+		and g_allergy_M not like concat('%',#{allergyList},'%')
+		</foreach>
+		</if>
+		limit #{start} , #{end}
+	</select>
+
+
+
+	<!-- ==========================scheduler========================== -->
+	
+		<!--====== 신상품 일반상품으로 변경 =====-->
+	<select id="selectNew_Goods" resultMap="goodsResult">
+ <![CDATA[
+  select * from goods_tb where g_cate1 = 'New_GOODS' and g_creDate < (date_sub(now(), interval 3 day ))
+]]>
+	</select>
+	
+	<update id="updateNomalGoods" parameterType="GoodsVO">
+ <![CDATA[
+update goods_tb set g_cate1 ='Normal' where g_cate1 =#{g_cate1} and g_id =#{g_id} 
+]]>
+	</update>
+	
+	<!-- ================================================================ -->
+	<!-- ===인기상품의 원상복귀 ====-->
+	<select id="selectBestGoodsN" resultMap="goodsResult">
+ <![CDATA[
+  select * from goods_tb where g_cate1 = "Best" and g_creDate < (date_sub(now(), interval 3 day ))
+]]>
+	</select>
+
+	<update id = "changeBestGoodsN" parameterType ="int">
+		update goods_tb set g_cate1 = "NEW_GOODS" where g_id = #{g_id}
+	</update>
+
+	<select id="selectAllBestGoods" 
+		resultMap="goodsResult">
+	<![CDATA[
+		   select * from goods_tb
+		   where g_cate1 in ("Best")]]>
+	</select>
+
+	<update id = "changeNomalGoods" parameterType ="int">
+		update goods_tb set g_cate1 = "Normal" where g_id = #{g_id}
+	</update>
+	
+	<update id = "changeBestGoods" parameterType ="int">
+		update goods_tb set g_cate1 = "Best" where g_id = #{g_id}
+	</update>
+	
+
+	<!--===================== scheduler Sale================================ -->
+	<!-- 세일시작 -->
+
+	<select id="searchGoodsSale" resultMap="goodsResult">
+
+<![CDATA[
+select * from goods_tb where g_saleDate1 <= now() and g_saleprice =0
+]]>
+
+	</select>
+
+	<update id="goodsSaleBegin" parameterType="GoodsVO">
+<![CDATA[
+update goods_tb set g_saleprice = #{g_saleprice} where g_id= #{g_id}
+]]>
+	</update>
+
+
+	<select id="searchGoodsSaleE" resultMap="goodsResult">
+
+<![CDATA[
+select * from goods_tb where g_saleDate2 <= now() and g_saleprice != 0
+]]>
+	</select>
+
+	<update id="goodsSaleEnd" parameterType="int">
+<![CDATA[
+update goods_tb set g_saleprice = '0', g_saleDate1= null, g_saleDate2= null , g_saleWon='0', g_salePer ='0' where g_id =#{g_id}
+]]>
+	</update>
+
+<!-- 관리자의 등록상품 조회 0620 -->
+<select id="adminGPage" parameterType="Map" resultMap="goodsResult">
+
+<![CDATA[
+	   select R1.* from (select * from goods_tb order by g_id) R1 order by g_id DESC limit #{start} , #{end} 
+	   ]]>
+</select>
+
+</mapper>
+ 

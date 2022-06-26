@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.user">
+	<!-- 리절트 맵 정의 -->
+	<resultMap id="uResult" type="MemberVO">
+		<result property="u_id" column="u_id" />
+		<result property="u_pw" column="u_pw" />
+		<result property="u_name" column="u_name" />
+		<result property="u_hp1" column="u_hp1" />
+		<result property="u_hp2" column="u_hp2" />
+		<result property="u_email1" column="u_email1" />
+		<result property="u_email2" column="u_email2" />
+		<result property="u_addr1" column="u_addr1" />
+		<result property="u_addr2" column="u_addr2" />
+		<result property="u_addr3" column="u_addr3" />
+		<result property="u_sex" column="u_sex" />
+		<result property="u_birth" column="u_birth" />
+		<result property="u_creDate" column="u_creDate" />
+		<result property="u_mile" column="u_mile" />
+		<result property="u_del" column="u_del" />
+		<result property="u_rank" column="u_rank" />
+		<result property="u_count" column="u_count" />
+		<result property="u_delDate" column="u_delDate" />
+	</resultMap>
+	
+	<resultMap id="mileResult" type="MileageVO">
+		<result property="m_id" column="m_id" />
+		<result property="m_point" column="m_point" />
+		<result property="timestamp" column="timestamp" />
+		<result property="u_id" column="u_id" />
+		<result property="o_id" column="o_id" />
+		<result property="g_id" column="g_id" />
+	</resultMap>
+
+	<select id="decode" resultType="memberVO" parameterType="java.util.Map">
+	    <![CDATA[
+			select * from user_tb
+			 where u_id=#{u_id}
+		]]>
+	</select>
+
+
+
+	<select id="selectOverlappedID" parameterType="String"
+		resultType="String">
+		select if(count(*), 'true', 'false')
+		from user_tb
+		where u_id = #{id}
+	</select>
+
+	<insert id="insertNewMember" parameterType="memberVO">
+  	<![CDATA[
+    	insert into user_tb(u_id,
+				 					 u_pw,
+                                     u_name,
+                                     u_hp1,
+                                     u_email1,
+                                     u_email2,
+                                     u_addr1,
+                                     u_addr2,
+                                     u_addr3,
+                                     u_sex,
+                                     u_birth)
+							 values(#{u_id},
+									#{u_pw},
+									#{u_name},
+									#{u_hp1},
+                                    #{u_email1},
+                                    #{u_email2},
+                                    #{u_addr1},
+                                    #{u_addr2},
+                                    #{u_addr3},
+                                    #{u_sex},
+                                    #{u_birth}
+                                   )
+   ]]>
+	</insert>
+	<!--회원삭제하기 -->
+	<delete id="deleteMember" parameterType="memberVO">
+  <![CDATA[
+  	delete from user_tb where u_id = #{u_id}
+  ]]>
+	</delete>
+
+	<!-- 비밀번호찾기 -->
+	<select id="pwdprint" resultType="memberVO"
+		parameterType="java.util.Map">
+	<![CDATA[
+		select u_pw from user_tb
+			where u_id = #{u_id}
+			and   u_name = #{u_name} 
+	]]>
+	</select>
+	<!-- 아이디찾기 -->
+	<select id="FindId" resultType="String"
+		parameterType="Map">
+  <![CDATA[
+select u_id from user_tb where u_email1 = #{email1} and u_email2 = #{email2} and u_name = #{name}
+]]>
+	</select>
+
+	<select id="FindId2" resultType="memberVO"
+		parameterType="Map">
+
+<![CDATA[
+select u_id from user_tb where hp1 = #{hp1} and u_name = #{name}
+]]>
+	</select>
+
+	<select id="FindPW" resultType="memberVO"
+		parameterType="Map">
+  <![CDATA[
+select * from user_tb where u_email1 = #{email1} and u_email2 = #{email2} and u_id = #{id}
+]]>
+	</select>
+
+
+	<update id="updateMember" parameterType="memberVO">
+
+	   update user_tb set <if test="u_pw != null and !(u_pw.equals(''))"> u_pw  = #{u_pw},</if>
+       u_name = #{u_name},
+                                     u_hp1 = #{u_hp1},
+                                     u_email1 = #{u_email1},
+                                     u_email2 = #{u_email2},
+                                     u_addr1 = #{u_addr1},
+                                     u_addr2 = #{u_addr2},
+                                     u_addr3 = #{u_addr3} where u_id=#{u_id}
+
+	</update>
+
+	<update id="lastLog" parameterType="String">
+  <![CDATA[
+		update user_tb set u_lastlog = current_timestamp() where u_id = #{u_id};
+			]]>
+	</update>
+	
+	<select id="myMileagePage" resultMap="mileResult" parameterType="Map">
+	   <![CDATA[
+		    select R1.* from (select m.*, o.g_name, o.pay_order_time, o.g_id from  mileage m left outer join order_tb o on o.o_id = m.o_id) R1 where u_id = #{u_id} order by o_id desc limit #{start} , #{end} 
+		]]>
+	</select>
+	
+	<select id="myMileageMinus" resultMap="mileResult" parameterType="Map">
+	   <![CDATA[
+		    select R1.* from (select m.*, o.g_name, o.pay_order_time, o.g_id from  mileage m left outer join order_tb o on o.o_id = m.o_id) R1 where u_id = #{u_id} and m_point < 0 order by o_id desc limit #{start} , #{end} 
+		]]>
+	</select>
+	
+	<select id="myMileagePlus" resultMap="mileResult" parameterType="Map">
+	   <![CDATA[
+		    select R1.* from (select m.*, o.g_name, o.pay_order_time, o.g_id from  mileage m left outer join order_tb o on o.o_id = m.o_id) R1 where u_id = #{u_id} and m_point > 0 order by o_id desc limit #{start} , #{end} 
+		]]>
+	</select>
+	
+	<select id="FindID2" resultType="memberVO" parameterType="Map">
+	  <![CDATA[
+	select * from user_tb where u_hp1 = #{hp1} and u_name = #{name}
+	]]>
+	</select>
+	
+	
+	
+	
+
+
+</mapper>
