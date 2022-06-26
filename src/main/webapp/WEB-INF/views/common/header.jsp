@@ -102,6 +102,7 @@
 .layout_header .logo_wrap {
 	text-align: center;
 	height: 80px;
+	width: 1280px;
 	zoom: 1;
 	padding: 1.5rem 0;
 	padding-bottom: 0px;
@@ -346,7 +347,7 @@
 			<div class="logo-wrap">
 				<h1 class="logo_area">
 					<a class="logo" href="${contextPath }/main/main.do"> <img
-						src="${contextPath }/resources/image/Chef.jpg" width="155">
+						src="${contextPath }/resources/image/logo.png" width="155px">
 					</a>
 				</h1>
 			</div>
