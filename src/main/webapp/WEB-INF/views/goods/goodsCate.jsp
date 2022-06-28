@@ -149,7 +149,7 @@ position: relative;
 }
 #title_text{
 font-size: 40px;
-color: #FD6EB0;
+color: #2F8624;
 }
 </style>
 </head>

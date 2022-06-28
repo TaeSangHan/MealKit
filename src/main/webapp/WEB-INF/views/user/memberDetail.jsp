@@ -21,7 +21,7 @@
 .div2 {
 	width: 3000px;
 	height: 100px;
-	background: #ffc0cf;
+	background: #6DB800;
 	text-align: center;
 	font-size: 50px;
 	line-height: 100px;
@@ -37,7 +37,7 @@
 
 .div2-1 a {
 	text-decoration: none;
-	background: #ffc0cf;
+	background: #6DB800;
 	color: black;
 	border: 3px solid gray;
 }
@@ -47,7 +47,7 @@
 	margin-left: 10%;
 	width: 80%;
 	height: 100px;
-	background: #ffC0cf;
+	background: #6DB800;
 	font-size: 45px;
 	display: flex;
 	justify-content: space-between;
@@ -91,7 +91,7 @@
 	width: 300px;
 	height: auto;
 	text-align: center;
-	background: #ffc0cf;
+	background: #6DB800;
 	margin: 0 27px;
 }
 
@@ -115,7 +115,7 @@
 	box-sizing: border-box;
 	width: 100%;
 	height: 1280px;
-	border: 5px solid #ffc0cf;
+	border: 5px solid #6DB800;
 	margin-bottom: 10px;
 }
 
@@ -142,7 +142,7 @@
 	color: white;
 	font-size: 34px;
 	line-height: 150px;
-	background: #ffc0cf;
+	background: #6DB800;
 }
 
 .texts b {
@@ -177,7 +177,7 @@ tr.orderlist td {
 }
 
 #state {
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	color: white;
 }
 
@@ -222,7 +222,7 @@ tr.border-bottom td {
 }
 
 .checked {
-	color: #ffc0cb;
+	color: #6DB800;
 	font-size: 60px;
 }
 
@@ -233,7 +233,7 @@ tr.border-bottom td {
 
 .titleText {
 	font-size: 30px;
-	color: #FD6EB0;
+	color: #2F8624;
 	margin: 30px;
 }
 </style>

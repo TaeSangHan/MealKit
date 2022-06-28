@@ -13,9 +13,9 @@
 <style>
 footer{
   position:relative;
-  background-color: #ffc0cf;
-  border-top: 3px solid #ffc0cf;
-  border-left: 3px solid #ffc0cf;
+  background-color: #6DB800;
+  border-top: 3px solid #6DB800;
+  border-left: 3px solid #6DB800;
 }
 footer>.list ul, footer>.list ul li{
 padding-inline-start: 0px;
@@ -29,9 +29,7 @@ padding-inline-start: 0px;
 
 	<footer>
 <div class="logo-wrap">
-<a href="#" >
-<img src="${contextPath }/resources/image/Chef.jpg" height="120px" width="150px">
-</a>
+
 </div>
 <div class="list">
 <ul>

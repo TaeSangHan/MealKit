@@ -218,7 +218,7 @@ function fn_buyBTN() {
 	font-size: 14px;
 	text-align: center;
 	color: black;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 }
 
 .detail_table tr {

@@ -104,9 +104,11 @@ input {
 
 #nav ul.nav_ul {
 	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #6DB800;
+	
 }
 
 #nav .cate1 {
@@ -118,11 +120,11 @@ input {
 
 #nav li a, .dropbtn {
 	display: inline-block;
-	color: black;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	overflow: hidden;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    overflow: hidden;
 }
 
 #nav li.dropdown {
@@ -132,7 +134,7 @@ input {
 #nav .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #f1f1f1;
+	background-color: #bdbdbd;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;

@@ -13,7 +13,7 @@
 
    #sect {
     text-align: -webkit-center;
-    border: 5px solid #ffc0cf63;
+    border: 5px solid #6DB80063;
     width: 750px;
     padding-bottom: 50px;
     border-radius: 20px;

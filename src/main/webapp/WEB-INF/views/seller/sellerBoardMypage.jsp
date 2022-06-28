@@ -76,7 +76,7 @@
 .div2 {
 	width: 335px;
 	height: 100px;
-	background: #ffc0cf;
+	background: #6DB800;
 	text-align: center;
 	font-size: 50px;
 	line-height: 100px;
@@ -94,7 +94,7 @@
 
 .div2-1 a {
 	text-decoration: none;
-	background: #ffc0cf;
+	background: #6DB800;
 	color: black;
 	border: 3px solid gray;
 }
@@ -185,7 +185,7 @@
 	box-sizing: border-box;
 	width: 100%;
 	height: 800px;
-	border: 5px solid #ffc0cf;
+	border: 5px solid #6DB800;
 }
 
 .div4 .tabmenu input:checked ~ label {
@@ -206,7 +206,7 @@ thead#tap-head {
 
 th.header {
 	padding-left: 6px;
-	border-bottom: 5px solid #ffc0cf
+	border-bottom: 5px solid #6DB800
 }
 
 .table-container {
@@ -239,7 +239,7 @@ span#fa\ fa-star\ {
 	height: 30px;
 }
 .checked {
-	color: #ffc0cb;
+	color: #6DB800;
 	font-size: 60px;
 }
 </style>

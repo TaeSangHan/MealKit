@@ -58,7 +58,7 @@ request.setCharacterEncoding("UTF-8");
 .board-b-wrap>input {
 	float: right;
 	display: inline-block;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	border-radius: 5px;
 	border: 4px #cccccc;
 	color: black;
@@ -75,7 +75,7 @@ request.setCharacterEncoding("UTF-8");
 	border-radius: 4px;
 	width: 150px;
 	align: center;
-	background: #ffc0cf;
+	background: #6DB800;
 }
 
 .table-wrap td.td2 {
@@ -99,7 +99,7 @@ request.setCharacterEncoding("UTF-8");
 }
 
 .board-title>h1 {
-	border-bottom: 3px solid #ffc0cf;
+	border-bottom: 3px solid #6DB800;
 }
 
 .table-wrap td.td2>.B_Uid {
@@ -126,7 +126,7 @@ request.setCharacterEncoding("UTF-8");
 }
 
 .checked {
-	color: #ffc0cb;
+	color: #6DB800;
 }
 </style>
 </head>

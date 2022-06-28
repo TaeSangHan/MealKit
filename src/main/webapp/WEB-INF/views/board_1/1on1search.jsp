@@ -64,7 +64,7 @@ tr.border-bottom td {
 #write a {
 	float: right;
 	text-align: center;
-	background-color: #ffc0cb;
+	background-color: #6DB800;
 	font-size: 14px;
 	border: 1px;
 	color: white;
@@ -75,7 +75,7 @@ tr.border-bottom td {
 
 #tabletitle {
 	margin: 10px;
-	color: #FD6EB0;
+	color: #2F8624;
 	font-size: 32px;
 }
 

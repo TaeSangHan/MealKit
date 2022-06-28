@@ -122,7 +122,7 @@ tr.border-bottom td {
 
 #tabletitle {
 	margin: 10px;
-	color: #FD6EB0;
+	color: #2F8624;
 	font-size: 32px;
 }
 
@@ -133,7 +133,7 @@ tr.border-bottom td {
 
 #maintitle {
 	font-size: 48px;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	margin: 10px 0 10px 0;
 }
 
@@ -150,7 +150,7 @@ tr.border-bottom td {
 #pick-user {
 	width: 400px;
 	height: 100px;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	margin: 0 auto;
 	float: left;
 	font-size: 32px;

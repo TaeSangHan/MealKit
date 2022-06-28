@@ -28,7 +28,7 @@
 }
 
 #sbt input {
-	background-color: #ffc0cb;
+	background-color: #6DB800;
 	border: 0px;
 	width: 100px;
 	height: 30px;

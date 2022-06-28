@@ -60,7 +60,7 @@
 	height: 70px;
 	margin: auto;
 	display: block;
-	background: #ffc0cf;
+	background: #6DB800;
 	border: 0px;
 }
 
@@ -74,12 +74,12 @@ width: 120px;
 height: 120px;
 }
 #top-table2 {
-background: #ffc0cf;
+background: #6DB800;
 border-collapse: collapse;
 }
 #cancelmain-wrap #maintitle {
 font-size: 30px;
-color: #FD6EB0;
+color: #2F8624;
 }
 </style>
 </head>

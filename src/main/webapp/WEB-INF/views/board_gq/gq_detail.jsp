@@ -119,14 +119,14 @@ function fn_review(url,b_gq_id){
 
 .board-b-wrap {
 	height: 40px;
-	border-bottom: 3px solid #ffc0cf;
+	border-bottom: 3px solid #6DB800;
 	margin: 10px;
 }
 
 .board-b-wrap>input {
 	float: right;
 	display: inline-block;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	border-radius: 5px;
 	border: 4px #cccccc;
 	color: black;

@@ -133,7 +133,7 @@
 .quickInfo-wrap {
 	width: 150px;
 	height: 320px;
-	background: #ffc0cf;
+	background: #6DB800;
 	text-align: center;
 	border: 1px solid #black;
 }

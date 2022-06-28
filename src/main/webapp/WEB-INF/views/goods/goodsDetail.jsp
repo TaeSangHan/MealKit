@@ -218,7 +218,7 @@ div .InfoTop {
 }
 
 .button {
-	background-color: ##6DB800;
+	background-color: #6DB800;
 	border: none;
 	border-radius: 4px;
 	padding: 15px 30px;
@@ -228,6 +228,7 @@ div .InfoTop {
 	font-size: 16px;
 	margin: 4px 2px;
 	cursor: pointer;
+	color: white;
 }
 
 .NFSbutton {
@@ -720,7 +721,7 @@ div #icon {
 								id="gAmount" name="amount" value="1" size="1"
 								onchange="change();"> <input type="button" value=" - "
 								onclick="del();"><br> <br> 금액 : <input
-								type="text" name="sum" size="8"
+								type="text" name="sum" size="8" readonly
 								style="width: 100px; height: 30px; font-size: 30px; border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px;">원
 							</b>
 						</form>
@@ -735,9 +736,7 @@ div #icon {
 					<a class="NFSbutton">상품 준비중</a>
 				</c:if>
 				<c:if test="${goodsInfo.g_amount > 0}">
-					<a
-						href="${contextPath}/cart/addGoodsInCart.do?g_id=${goodsInfo.g_id}&cate=zzim"
-						class="button">찜하기</a>
+					<a href="${contextPath}/cart/addGoodsInCart.do?g_id=${goodsInfo.g_id}&cate=zzim" class="button" style= "color: white;">찜하기</a>
 					<a onClick="buy();" class="button">구매하기</a>
 					<a onClick="cart();" class="button">장바구니담기</a>
 				</c:if>

@@ -137,7 +137,7 @@ tr.border-bottom td {
 
 #main-title h1 {
 	margin: 10px 0 0 0;
-	color: #FD6EB0;
+	color: #2F8624;
 }
 
 #sub-title {

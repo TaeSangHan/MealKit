@@ -19,7 +19,7 @@
 }
 
 .change-table th{
-background-color: #ffc0cb;
+background-color: #6DB800;
 }
 
 .change-table{
@@ -57,7 +57,7 @@ width: 294px;
 width: 294px;
 }
 #sbt input{
-background-color: #ffc0cb;
+background-color: #6DB800;
 border: 0px;
 width: 100px;
 height: 30px;

@@ -106,7 +106,7 @@ a:hover {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 }
 
 #nav .cate1 {

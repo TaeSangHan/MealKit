@@ -36,13 +36,13 @@ tr.cancellist td {
 }
 
 #cancelmain-wrap .cancel-table #state {
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	color: white;
 }
 
 #maintitle {
 	font-size: 50px;
-	color: #FD6EB0;
+	color: #2F8624;
 	padding: 0px;
 	margin: 0px;
 
@@ -52,7 +52,7 @@ height: 150px;
 }
 
 #top-table{
-background: #ffc0cf;
+background: #6DB800;
 color: white;
 }
 </style>

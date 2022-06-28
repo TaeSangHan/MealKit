@@ -100,13 +100,13 @@ function fn_review(url,b_1_id){
 
 .board-b-wrap {
 	height: 40px;
-	border-bottom: 3px solid #ffc0cf;
+	border-bottom: 3px solid #6DB800;
 }
 
 .board-b-wrap>input {
 	float: right;
 	display: inline-block;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	border-radius: 5px;
 	border: 4px #cccccc;
 	color: black;
@@ -123,7 +123,7 @@ function fn_review(url,b_1_id){
 	border-radius: 4px;
 	width: 150px;
 	align: center;
-	background: #ffc0cf;
+	background: #6DB800;
 }
 
 .table-wrap textarea {
@@ -133,7 +133,7 @@ function fn_review(url,b_1_id){
 
 .table-wrap1 {
 	margin-top: 30px;
-	border-top: 3px solid #ffc0cf;
+	border-top: 3px solid #6DB800;
 	padding-top: 30px;
 }
 
@@ -145,7 +145,7 @@ function fn_review(url,b_1_id){
 	border-radius: 4px;
 	width: 150px;
 	align: center;
-	background: #ffc0cf;
+	background: #6DB800;
 }
 
 .table-wrap1 textarea {
@@ -156,7 +156,7 @@ function fn_review(url,b_1_id){
 .board-r-wrap>input {
 	float: right;
 	display: inline-block;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	border-radius: 5px;
 	border: 4px #cccccc;
 	color: black;
@@ -184,7 +184,7 @@ function fn_review(url,b_1_id){
 .check-context .check-inner {
 	width: 80%;
 	height: 80%;
-	background: #ffc0cf;
+	background: #6DB800;
 	top: 30px;
 	left: 50%;
 	transform: translateX(-50%);
@@ -203,7 +203,7 @@ function fn_review(url,b_1_id){
 	position: absolute;
 	right: 35%;
 	top: 10px;
-	background: #ffc0cf;
+	background: #6DB800;
 	/* 백그라운드는 이너와 맞춰줄것 */
 }
 

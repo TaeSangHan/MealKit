@@ -75,7 +75,7 @@ ul.tabs li.current {
 	text-align: center;
 	font-size: 50px;
 	border: 5px solid;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	color: white;
 }
 
@@ -149,7 +149,7 @@ ul.tabs li.current {
 	color: white;
 	font-size: 34px;
 	line-height: 150px;
-	background: #ffc0cf;
+	background: #6DB800;
 }
 
 .name {
@@ -195,7 +195,7 @@ ul.tabs li.current {
 }
 
 #state {
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	color: white;
 }
 

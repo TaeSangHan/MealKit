@@ -410,6 +410,4 @@ public class BaseController {
 		session.setAttribute("quickZzimList",quickZzimList);
 		session.setAttribute("quickZzimListNum", quickZzimList.size());
 	}
-
-
 }

@@ -35,13 +35,13 @@
 
 .board-b-wrap {
 	height: 40px;
-	border-bottom: 3px solid #ffc0cf;
+	border-bottom: 3px solid #6DB800;
 }
 
 input[type="button"] {
 	float: right;
 	display: inline-block;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	border-radius: 5px;
 	border: 4px #cccccc;
 	color: black;
@@ -58,7 +58,7 @@ input[type="button"] {
 	border-radius: 4px;
 	width: 150px;
 	align: center;
-	background: #ffc0cf;
+	background: #6DB800;
 }
 
 .table-wrap textarea {
@@ -68,7 +68,7 @@ input[type="button"] {
 
 .table-wrap1 {
 	margin-top: 30px;
-	border-top: 3px solid #ffc0cf;
+	border-top: 3px solid #6DB800;
 	padding-top: 30px;
 }
 
@@ -81,7 +81,7 @@ input[type="button"] {
 	width: 150px;
 	height: 150px;
 	align: center;
-	background: #ffc0cf;
+	background: #6DB800;
 }
 
 .table-wrap1 textarea {
@@ -138,7 +138,7 @@ img#contentID {
 a.atagID {
     float: right;
     display: inline-block;
-    background-color: #ffc0cf;
+    background-color: #6DB800;
     border-radius: 5px;
     border: 4px #cccccc;
     color: black;

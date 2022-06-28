@@ -51,7 +51,7 @@
 .check-context .check-inner {
 	width: 40%;
 	height: 40%;
-	background: #ffc0cf;
+	background: #6DB800;
 	top: 150px;
 	left: 50%;
 	transform: translateX(-50%);
@@ -69,7 +69,7 @@
 	position: absolute;
 	right: 35%;
 	top: 10px;
-	background: #ffc0cf;
+	background: #6DB800;
 	/* 백그라운드는 이너와 맞춰줄것 */
 }
 /*  */
@@ -87,7 +87,7 @@
 .check-context1 .check-inner1 {
 	width: 40%;
 	height: 40%;
-	background: #ffc0cf;
+	background: #6DB800;
 	top: 150px;
 	left: 50%;
 	transform: translateX(-50%);
@@ -105,11 +105,11 @@
 	position: absolute;
 	right: 35%;
 	top: 10px;
-	background: #ffc0cf;
+	background: #6DB800;
 	/* 백그라운드는 이너와 맞춰줄것 */
 }
 .check-inner1>.pw {
-	boackground: #ffc0cf;
+	boackground: #6DB800;
 }
 h2.adminLiName {
     margin: 0px;

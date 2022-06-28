@@ -113,7 +113,7 @@ tr.border-bottom td {
 
 #tabletitle {
 	margin: 10px;
-	color: #FD6EB0;
+	color: #2F8624;
 	font-size: 32px;
 }
 
@@ -124,7 +124,7 @@ tr.border-bottom td {
 
 #maintitle {
 	font-size: 48px;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	margin: 10px 0 10px 0;
 }
 
@@ -141,7 +141,7 @@ tr.border-bottom td {
 #pick-user {
 	width: 400px;
 	height: 100px;
-	background-color: #ffc0cf;
+	background-color: #6DB800;
 	margin: 0 auto;
 	float: left;
 	font-size: 32px;
@@ -180,7 +180,7 @@ margin: 30px;
 .check-context .check-inner {
 	width: 80%;
 	height: 80%;
-	background: #ffc0cf;
+	background: #6DB800;
 	top: 30px;
 	left: 50%;
 	transform: translateX(-50%);
@@ -198,7 +198,7 @@ margin: 30px;
 	position: absolute;
 	right: 35%;
 	top: 10px;
-	background: #ffc0cf;
+	background: #6DB800;
 	/* 백그라운드는 이너와 맞춰줄것 */
 }
 

@@ -18,6 +18,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>메인페이지</title>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
