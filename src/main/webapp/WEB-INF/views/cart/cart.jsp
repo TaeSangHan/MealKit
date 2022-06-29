@@ -487,7 +487,7 @@ function check_total(){
 					<div class="container3">
 
 						<div class=select>
-							<input type='checkbox' name='checked_cart' value='selectall'
+							<input type='checkbox' name='checked_cart' value='selectall' checked
 								onclick='selectAll(this)' /> <b>전체선택</b>
 						</div>
 					</div>

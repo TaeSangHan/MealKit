@@ -13,9 +13,7 @@
 <style>
 footer{
   position:relative;
-  background-color: #6DB800;
-  border-top: 3px solid #6DB800;
-  border-left: 3px solid #6DB800;
+  border: none;
 }
 footer>.list ul, footer>.list ul li{
 padding-inline-start: 0px;

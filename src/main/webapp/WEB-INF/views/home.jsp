@@ -31,67 +31,46 @@ div .lilili {
     flex-direction: column;
     justify-content: center;
 }
+.api {
+width: 400px;
+height: 600px;
+margin: auto;
+}
+
+textarea {
+width: 1200px;
+height: 205px;
+font-size: 20px;
+text-align: left;
+}
 
 </style>
 </head>
 <body>
 <div class="main-container">
-				<div id=maintitle>상품관리</div>
-				<%-- <c:choose>
-				<c:when test="${boardASPList.cate == '이벤트'}">
-				<c:forEach var="item" items="${boardASPList}" begin="0" end="4"> --%>
+				<div id=maintitle><h1>밀키트 판매, 중개 사이트 입니다</h1></div>
+				
+				<img src="" class = "api">
+				<img src="" class = "api">
+				<img src="" class = "api">
 				<div class="table-container">
 					<div id="stable-striped">
-							<div class="border-bottom">
-								<div class="lilili">
-									<%-- <a href="${contextPath}/baordA/boardASPList.do?b_a_id=${item.b_a_id}&cate=이벤트"> --%>
-										<img src="${contextPath}/resources/image/BANG.png" height="100px" />
-									<!-- </a> -->
-								</div>
-								<div class="lilili">
-									<a href="">
-										<img src="${contextPath}/resources/image/BANG.png" height="100px" />
-									</a>
-								</div>
-								<div class="lilili">
-									<a href="">
-										<img src="${contextPath}/resources/image/BANG.png" height="100px" />
-									</a>
-								</div>
-								<div class="lilili">
-									<a href="">
-										<img src="${contextPath}/resources/image/BANG.png" height="100px" />
-									</a>
-								</div>
-								<div class="lilili">
-									<a href="">
-										<img src="${contextPath}/resources/image/BANG.png" height="100px" />
-									</a>
-								</div>
-							</div>
+					 어드민 아이디: admin
+					 비밀번호: 123
+					 <h2>개발환경</h2>
+					 
+					 <h3>FrontEnd</h3>
+					 Language: HTML5, CSS, JavaScript<br>
+					 Framework: Jquery 1.12.4, JSON, Ajax
+					 <h3>BackEnd</h3>
+					 Language: Java 15.0.2, JSP<br>
+					 Framework: MyBatis, Spring Framework
+					 <br>
+					 <a href = "${contextPath}/main/main.do">사이트로 진입하기</a>
 					</div>
-					<center>
-						<div class="" id="pagination">
-							<c:forEach var="page" begin="1" end="10" step="1">
-								<c:if test="${section >0 && page==1 }">
-									<a
-										href="${contextPath}/boardA/selectGoodsPage.do?section=${section}-1&pageNum=${(section-1)*12+1 }">preview</a>
-								</c:if>
-								<a
-									href="${contextPath}/goods/selectGoodsPage.do?section=${section}&pageNum=${page}">${(section)*12 +page}
-								</a>
-								<c:if test="${page ==10 }">
-									<a
-										href="${contextPath}/goods/selectGoodsPage.do?section=${section}+1&pageNum=${section*12}+1">next</a>
-								</c:if>
-							</c:forEach>
-						</div>
-					</center>
+					
 
 				</div>
-				<%-- </c:forEach>
-				</c:when>
-				</c:choose> --%>
 			</div>
 </body>
 </html>

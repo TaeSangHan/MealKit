@@ -133,9 +133,10 @@
 .quickInfo-wrap {
 	width: 150px;
 	height: 320px;
-	background: #6DB800;
+	background: #ffffff;
 	text-align: center;
-	border: 1px solid #black;
+	border: 1px solid black;
+	color: black;
 }
 
 .quickInfo img {
@@ -147,6 +148,7 @@ border: none;
 background: transparent;
 text-align: center;
 width: 140px;
+color: black;
 }
 .quickInfo-wrap ul {
 padding: 0px;
